@@ -48,8 +48,15 @@ public enum ErrorStatus implements BaseErrorCode {
     NEIGHBORHOOD_COMMENT_NOT_EXIST(HttpStatus.NOT_FOUND, "NEIGHBORHOOD_COMMENT_404", "해당 댓글이 존재하지 않습니다."),
     SCRAP_ERROR(HttpStatus.BAD_REQUEST, "SCRAP_POST_ARGUMENT_ERROR","스크랩 대상 게시글이 존재하지 않습니다."),
 
-    DIARY_NOT_EXIST(HttpStatus.BAD_REQUEST, "DIARY_4041", "다이어리가 존재하지 않습니다.")
+    DIARY_NOT_EXIST(HttpStatus.BAD_REQUEST, "DIARY_4041", "다이어리가 존재하지 않습니다."),
+
+    // 일정 관련 에러
+    SCHEDULE_POST_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4001", "게시글 작성 오류입니다.")
+
     ;
+
+
+
 
     private final HttpStatus httpStatus;
     private final String code;
