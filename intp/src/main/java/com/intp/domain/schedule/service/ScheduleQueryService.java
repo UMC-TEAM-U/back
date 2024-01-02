@@ -1,4 +1,4 @@
-package com.intp.domain.user.controller;
+package com.intp.domain.schedule.service;
 
 public interface ScheduleQueryService {
 
