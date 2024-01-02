@@ -23,7 +23,7 @@ public class BirthdayController {
 
     private final BirthdayService birthdayService;
 
-    @PostMapping("/")
+    @PostMapping("")
     public ApiResponse createFriend(@Valid @RequestBody CreateBirthdayRequestDTO birthdayDTO,
                                     Errors errors) {
         if (errors.hasErrors()) {
@@ -35,7 +35,6 @@ public class BirthdayController {
 
     @GetMapping("/{friendId}")
     public List<BirthdayResponseDTO> getBirthday(@PathVariable(value = "friendId") Long friendId) {
-
         return birthdayService.getBirthdays(friendId);
     }
 
