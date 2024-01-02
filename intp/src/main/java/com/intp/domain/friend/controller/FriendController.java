@@ -26,4 +26,8 @@ public class FriendController {
         }
         return ApiResponse.onSuccess(friendService.createFriend(createFriendRequestDTO));
     }
+    @GetMapping
+    public ApiResponse getFriends(){
+        return ApiResponse.onSuccess(friendService.getFriends());
+    }
 }

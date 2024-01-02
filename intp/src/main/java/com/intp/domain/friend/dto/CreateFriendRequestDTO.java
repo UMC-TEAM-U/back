@@ -25,7 +25,7 @@ public class CreateFriendRequestDTO {
                 .friendLevel(FriendLevel.fromLevel(createFriendRequestDTO.getLevel()))
                 .member(member)
                 .memo(createFriendRequestDTO.getMemo())
-                .nickname(createFriendRequestDTO.getNickname())
+                .name(createFriendRequestDTO.getNickname())
                 .build();
     }
 }
