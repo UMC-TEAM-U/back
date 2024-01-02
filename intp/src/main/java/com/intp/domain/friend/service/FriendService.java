@@ -81,6 +81,7 @@ public class FriendService {
 
     public List<FriendResponseDTO> getBirthdayFriends(){
         List<Birthday> birthdayList = birthdayRepository.findAllByMember(getMemberFromToken());
+        System.out.println(birthdayList.size());
         List<Friend> friendList = birthdayList.stream()
                 .map(Birthday::getFriend)
                 .distinct() // optional, removes duplicates
@@ -92,6 +93,7 @@ public class FriendService {
 
     public List<FriendResponseDTO> getEventFriends(){
         List<Event> eventList = eventRepository.findAllByMember(getMemberFromToken());
+        System.out.println(eventList.size());
         List<Friend> friendList = eventList.stream()
                 .map(Event::getFriend)
                 .distinct() // optional, removes duplicates

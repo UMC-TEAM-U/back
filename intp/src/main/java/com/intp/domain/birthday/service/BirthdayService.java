@@ -34,7 +34,7 @@ public class BirthdayService {
 
     public ApiResponse createBirthday(CreateBirthdayRequestDTO birthdayDTO) {
         Friend friend = friendRepository.findById(birthdayDTO.getFriend_id()).orElseThrow(() -> new FriendHandler(ErrorStatus._BAD_REQUEST));
-        Birthday birthday = birthdayDTO.toEntity(birthdayDTO, friend);
+        Birthday birthday = birthdayDTO.toEntity(birthdayDTO, friend,getMemberFromToken());
         birthdayRepository.save(birthday);
         return ApiResponse.of(SuccessStatus._PRESENT_ADD_SUCCESS, "선물 추가 성공!");
     }
