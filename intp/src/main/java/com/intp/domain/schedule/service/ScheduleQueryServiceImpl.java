@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
 @Transactional
 public class ScheduleQueryServiceImpl implements ScheduleQueryService{
 
-
     private final ScheduleRepository scheduleRepository;
+    private final MemberRepository memberRepository;
 
     //월별 조회 api입니다.
     public List<ScheduleMonthlyResponseDTO> getMonthlySchedules(Integer targetYear, Integer targetMonth ) {
@@ -72,6 +72,5 @@ public class ScheduleQueryServiceImpl implements ScheduleQueryService{
         }
 
     }
-
 
 }
