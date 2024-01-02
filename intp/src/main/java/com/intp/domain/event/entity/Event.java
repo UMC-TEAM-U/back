@@ -26,9 +26,9 @@ public class Event {
     @Column(nullable = false)
     private int price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="friend_id", nullable = false)
-    private Friend friend;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name="friend_id", nullable = false)
+    // private Friend friend;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id", nullable = false)
