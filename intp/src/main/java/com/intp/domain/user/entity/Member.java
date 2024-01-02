@@ -7,11 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import javax.persistence.*;
 
-import com.intp.common.entity.BaseTimeEntity;
-import com.intp.domain.birthday.entity.Birthday;
-import com.intp.domain.changehistory.entity.ChangeHistory;
-import com.intp.domain.event.entity.Event;
-import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.schedule.entity.Schedule;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,11 +27,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Entity
 @Table(name = "member")
 @AllArgsConstructor
-public class Member extends BaseTimeEntity implements UserDetails {
+public class Member implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id")
+    @Column(name = "user_id")
     private Long id;
 
     @Column
@@ -52,20 +47,9 @@ public class Member extends BaseTimeEntity implements UserDetails {
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<String> roles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<Friend> friendList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    // 멤버 - 일정 연관관계 추가
+    @OneToMany(mappedBy = "Schedule", cascade = CascadeType.ALL)
     private List<Schedule> memberScheduleList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<ChangeHistory> changeHistoryList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<Birthday> birthdayList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<Event> eventList = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

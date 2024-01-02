@@ -1,7 +1,5 @@
 package com.intp.domain.schedule.entity;
 
-import com.intp.common.entity.BaseTimeEntity;
-import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.user.entity.Member;
 import lombok.*;
 
@@ -15,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Table(name = "Schedule")
-public class Schedule extends BaseTimeEntity {
+public class Schedule {
 
     @Id @GeneratedValue
     @Column(name = "id")
@@ -31,7 +29,7 @@ public class Schedule extends BaseTimeEntity {
     @JoinColumn(name= "member_id")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "friend_id")
-    private Friend friend;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name= "friend_id")
+//    private Friend friend;
 }

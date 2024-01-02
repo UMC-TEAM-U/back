@@ -72,6 +72,3 @@ rebel.xml
 .gradletasknamecache
 
 *.yml
-
-*.xml
-*.iml
