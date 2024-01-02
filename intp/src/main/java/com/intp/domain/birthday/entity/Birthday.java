@@ -24,6 +24,9 @@ public class Birthday {
     private int price;
 
     private String memo;
+
+    private String presentName;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "friend_id")
     private Friend friend;
