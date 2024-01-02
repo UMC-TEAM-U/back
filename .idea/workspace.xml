@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fdd86f65-8182-44b8-a720-88847c0c4b62" name="Changes" comment="[feature] : BirthdayRepository 생성 #5">
+      <change afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/dto/BirthdayDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/repository/BirthdayReopository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/service/BirthdayService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/intp">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2aOAWSiPZ6iAPGEqUdgqdjkdPhu" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/itsme/Desktop/해커톤/back",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.intp.DemoApplication" />
+      <module name="demo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.intp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DemoApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdd86f65-8182-44b8-a720-88847c0c4b62" name="Changes" comment="" />
+      <created>1704179282777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704179282777</updated>
+    </task>
+    <task id="LOCAL-00001" summary="[comment] : 오류나는 부분 주석 처리 #5">
+      <option name="closed" value="true" />
+      <created>1704190588222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704190588222</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[fix] : 윈도우에서 생성되는 파일 gitignore 적용#5">
+      <option name="closed" value="true" />
+      <created>1704191217780</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704191217780</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[feature] : BirthdayRepository 생성 #5">
+      <option name="closed" value="true" />
+      <created>1704191814124</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704191814124</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[comment] : 오류나는 부분 주석 처리 #5" />
+    <MESSAGE value="[fix] : 윈도우에서 생성되는 파일 gitignore 적용#5" />
+    <MESSAGE value="[feature] : BirthdayRepository 생성 #5" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] : BirthdayRepository 생성 #5" />
+  </component>
+</project>
