@@ -2,7 +2,9 @@ package com.intp.domain.schedule.dto;
 
 import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.schedule.entity.Schedule;
+import com.intp.domain.user.entity.Member;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -10,6 +12,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Builder
+@Data
 public class ScheduleRegisterRequestDTO {
 
     @NotNull
@@ -21,15 +24,10 @@ public class ScheduleRegisterRequestDTO {
     @NotNull
     private Long friendId;
 
-
-
     public static Schedule toEntity(ScheduleRegisterRequestDTO scheduleRegisterRequestDTO,
-                                    Friend friend,
-                                    Member member
-    ) {
+                                    Friend friend) {
 
         return Schedule.builder()
-                .member(member)
                 .date(scheduleRegisterRequestDTO.date)
                 .memo(scheduleRegisterRequestDTO.memo)
                 .title(scheduleRegisterRequestDTO.title)

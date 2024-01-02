@@ -21,14 +21,14 @@ import static com.intp.common.util.ValidationUtils.getValidationErrors;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/schedule")
+@RequestMapping("/api/schedules")
 public class ScheduleRegisterController {
 
     private final ScheduleCommandService scheduleCommandService;
 
 
     // 일정 추가하기
-    @PostMapping("/register")
+    @PostMapping("/")
     public ApiResponse createSchedule(@RequestBody @Valid ScheduleRegisterRequestDTO scheduleRegisterRequestDTO, Errors errors) {
         if (errors.hasErrors()) {
             return ApiResponse.ofFailure(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR, getValidationErrors(errors));
