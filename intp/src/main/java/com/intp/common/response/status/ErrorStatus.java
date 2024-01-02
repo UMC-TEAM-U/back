@@ -29,6 +29,8 @@ public enum ErrorStatus implements BaseErrorCode {
     FRIEND_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "Friend4001", "친구 생성 유효성 검사 실패"),
     PRESENT_ERROR(HttpStatus.BAD_REQUEST, "Present4001", "선물 추가 실패"),
     EVENT_ERROR(HttpStatus.BAD_REQUEST,"Event4001", "경조사 추가 실패"),
+    UPDATE_ERROR(HttpStatus.BAD_REQUEST,"Friend4001", "존재하지 않는 친구입니다."),
+    UPDATE_FRIEND_ERROR(HttpStatus.BAD_REQUEST,"Friend4001", "친구 등급 업데이트 유효성 검사 실패"),
     // 일정 관련 에러
     SCHEDULE_POST_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4001", "일정 작성 오류, 존재하지 않는 친구입니다."),
     SCHEDULE_MONTHLY_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4002", "월별 일정 조회 오류, 요청 연 혹은 월이 잘못되었습니다. 다시 확인해주세요."),

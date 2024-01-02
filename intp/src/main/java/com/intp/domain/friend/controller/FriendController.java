@@ -39,7 +39,10 @@ public class FriendController {
     }
 
     @PutMapping
-    public ApiResponse changeFriendRate(@Valid @RequestBody UpdateFriendRequestDTO updateFriendRequestDTO) {
+    public ApiResponse changeFriendRate(@Valid @RequestBody UpdateFriendRequestDTO updateFriendRequestDTO, Errors errors) {
+        if (errors.hasErrors()) {
+            return ApiResponse.ofFailure(ErrorStatus.FRIEND_ARGUMENT_ERROR, getValidationErrors(errors));
+        }
         return ApiResponse.of(SuccessStatus._FRIEND_GET_SUCCESS, friendService.changeFriendRate(updateFriendRequestDTO));
     }
 
