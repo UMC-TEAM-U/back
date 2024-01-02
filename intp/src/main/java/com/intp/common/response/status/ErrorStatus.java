@@ -30,7 +30,9 @@ public enum ErrorStatus implements BaseErrorCode {
     PRESENT_ERROR(HttpStatus.BAD_REQUEST, "Present4001", "선물 추가 실패"),
     // 일정 관련 에러
     SCHEDULE_POST_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4001", "일정 작성 오류, 존재하지 않는 친구입니다."),
-    SCHEDULE_MONTHLY_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4002", "일정 조회 오류, 요청 연 혹은 월이 잘못되었습니다. 다시 확인해주세요.")
+    SCHEDULE_MONTHLY_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4002", "월별 일정 조회 오류, 요청 연 혹은 월이 잘못되었습니다. 다시 확인해주세요."),
+    SCHEDULE_DATE_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4003", "일별 일정 조회 오류, 요청 연 혹은 월 혹은 날이 잘못되었습니다. 다시 확인해주세요.")
+
     ;
 
 

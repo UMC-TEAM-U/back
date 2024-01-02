@@ -32,14 +32,19 @@ public class ScheduleController {
     }
 
     @GetMapping("/")
-    public ApiResponse getMonthlySchedule(@RequestParam Integer year,
-                                          @RequestParam Integer month) {
-//        if (errors.hasErrors()) {
-//            return ApiResponse.ofFailure(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR, getValidationErrors(errors));
-//        }
+    public ApiResponse getMonthlySchedules(@RequestParam Integer year,
+                                           @RequestParam Integer month) {
+
         return ApiResponse.onSuccess(scheduleQueryService.getMonthlySchedules(year, month));
     }
 
+    @GetMapping("/datail")
+    public ApiResponse getDateSchedules(@RequestParam Integer year,
+                                          @RequestParam Integer month,
+                                          @RequestParam Integer date
+    ) {
 
+        return ApiResponse.onSuccess(scheduleQueryService.getDateSchedules(year, month, date));
+    }
 
 }

@@ -8,4 +8,6 @@ public interface ScheduleQueryService {
 
     public List<ScheduleMonthlyResponseDTO> getMonthlySchedules(Integer targetYear, Integer targetMonth );
 
+    public List<ScheduleMonthlyResponseDTO> getDateSchedules(Integer targetYear, Integer targetMonth, Integer targetDate);
+
 }
