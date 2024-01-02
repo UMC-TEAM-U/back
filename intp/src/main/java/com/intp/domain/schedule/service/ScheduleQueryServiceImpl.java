@@ -33,7 +33,10 @@ public class ScheduleQueryServiceImpl implements ScheduleQueryService{
                 .stream()
                 .filter(schedule -> schedule.getDate().getMonthValue() == targetMonth
                         && schedule.getDate().getYear() == targetYear)
-                .limit(3)
+                .collect(Collectors.groupingBy(schedule -> schedule.getDate()))
+                .values()
+                .stream()
+                .flatMap(sameDateSchedules -> sameDateSchedules.stream().limit(3))
                 .collect(Collectors.toList());
 
         return ScheduleMonthlyResponseDTO.convertToDTOList(monthlySchedules);
