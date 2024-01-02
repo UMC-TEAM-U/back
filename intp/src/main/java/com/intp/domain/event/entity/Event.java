@@ -1,16 +1,15 @@
 package com.intp.domain.event.entity;
 
 import com.intp.domain.friend.entity.Friend;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @Builder
 public class Event {
 

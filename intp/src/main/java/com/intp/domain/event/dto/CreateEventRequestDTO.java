@@ -28,5 +28,7 @@ public class CreateEventRequestDTO {
                 .friend(friend)
                 .build();
     }
+
+
 }
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -19,10 +20,16 @@ public class EventController {
     private EventRepository eventRepository;
     private EventService eventService;
 
-    @PostMapping("/event/add")
-    public ApiResponse createEvent(@Valid @RequestBody CreateEventRequestDTO createEventRequestDTO){
+    @PostMapping("/add")
+    public ApiResponse createEvent(@Valid @RequestBody CreateEventRequestDTO dto){
 
-        CreateEventResponseDTO createdEvent = eventService.createEvent(createEventRequestDTO);
-        return ApiResponse.onSuccess(createdEvent);
+        CreateEventResponseDTO createdEvent = eventService.createEvent(dto);
+        return new ApiResponse(true, "200", "success", createdEvent);
     }
+
+    @GetMapping("/")
+    public List<CreateEventResponseDTO> getEvent(){
+        return eventService.getEvents();
+    }
+
 }
