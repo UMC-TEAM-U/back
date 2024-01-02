@@ -50,11 +50,13 @@ public class FriendService {
         return FriendResponseDTO.from(friend);
     }
 
-    /*public List<ChangeRateResponseDTO> getChanges(Long friendId){
+    public List<ChangeHistoryResponseDTO> getChanges(Long friendId){
         Friend friend = friendRepository.findById(friendId).orElseThrow(() -> new ScheduleHandler(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR));
         List<ChangeHistory> changeHistories = changeHistoryRepository.findAllByFriend(friend);
-
-    }*/
+        return changeHistories.stream()
+                .map(ChangeHistoryResponseDTO::from)
+                .collect(Collectors.toList());
+    }
 
     public FriendResponseDTO changeFriendRate(UpdateFriendRequestDTO updateFriendRequestDTO) {
         Friend friend = friendRepository.findById(updateFriendRequestDTO.getFriendId()).orElseThrow(() -> new ScheduleHandler(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR));

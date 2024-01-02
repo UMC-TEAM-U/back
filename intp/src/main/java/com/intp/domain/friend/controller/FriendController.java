@@ -6,8 +6,6 @@ import com.intp.common.response.status.SuccessStatus;
 import com.intp.domain.friend.dto.CreateFriendRequestDTO;
 import com.intp.domain.friend.dto.UpdateFriendRequestDTO;
 import com.intp.domain.friend.service.FriendService;
-import io.swagger.annotations.Api;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -45,8 +43,8 @@ public class FriendController {
         return ApiResponse.of(SuccessStatus._FRIEND_GET_SUCCESS, friendService.changeFriendRate(updateFriendRequestDTO));
     }
 
-   /* @GetMapping("/{friend_id}/changes")
+    @GetMapping("/{friend_id}/changes")
     public ApiResponse getChangeFriendList(@PathVariable("friend_id") Long friendId) {
         return ApiResponse.of(SuccessStatus._FRIEND_AMEND_SUCCESS, friendService.getChanges(friendId));
-    }*/
+    }
 }
