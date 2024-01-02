@@ -23,6 +23,7 @@ public class ScheduleController {
 
 
     // 일정 추가하기
+    @CrossOrigin
     @PostMapping("/")
     public ApiResponse createSchedule(@RequestBody @Valid ScheduleRegisterRequestDTO scheduleRegisterRequestDTO, Errors errors) {
         if (errors.hasErrors()) {
@@ -31,6 +32,7 @@ public class ScheduleController {
         return ApiResponse.onSuccess(scheduleCommandService.registerSchedule(scheduleRegisterRequestDTO));
     }
 
+    @CrossOrigin
     @GetMapping("/")
     public ApiResponse getMonthlySchedules(@RequestParam Integer year,
                                            @RequestParam Integer month) {
@@ -38,6 +40,7 @@ public class ScheduleController {
         return ApiResponse.onSuccess(scheduleQueryService.getMonthlySchedules(year, month));
     }
 
+    @CrossOrigin
     @GetMapping("/datail")
     public ApiResponse getDateSchedules(@RequestParam Integer year,
                                           @RequestParam Integer month,
@@ -47,10 +50,10 @@ public class ScheduleController {
         return ApiResponse.onSuccess(scheduleQueryService.getDateSchedules(year, month, date));
     }
 
-    @DeleteMapping("/delete/{schedule_id}")
+    @CrossOrigin
+    @DeleteMapping("/{schedule_id}")
     public ApiResponse getDateSchedules(@PathVariable Long schedule_id
     ) {
-
         return ApiResponse.onSuccess(scheduleQueryService.deleteSchedule(schedule_id));
     }
 

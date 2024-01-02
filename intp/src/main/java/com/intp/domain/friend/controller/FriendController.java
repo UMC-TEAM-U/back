@@ -20,6 +20,7 @@ import static com.intp.common.util.ValidationUtils.getValidationErrors;
 public class FriendController {
 
     private final FriendService friendService;
+    @CrossOrigin
     @PostMapping
     public ApiResponse createFriend(@Valid @RequestBody CreateFriendRequestDTO createFriendRequestDTO,
                               Errors errors) {
@@ -28,16 +29,19 @@ public class FriendController {
         }
         return ApiResponse.onSuccess(friendService.createFriend(createFriendRequestDTO));
     }
+    @CrossOrigin
     @GetMapping
     public ApiResponse getFriends(@RequestParam int sort){
         return ApiResponse.onSuccess(friendService.getFriends(sort));
     }
 
+    @CrossOrigin
     @GetMapping("/{friend_id}")
     public ApiResponse getFriend(@PathVariable("friend_id") Long friendId) {
         return ApiResponse.of(SuccessStatus._FRIEND_GET_SUCCESS, friendService.getFriend(friendId));
     }
 
+    @CrossOrigin
     @PutMapping
     public ApiResponse changeFriendRate(@Valid @RequestBody UpdateFriendRequestDTO updateFriendRequestDTO, Errors errors) {
         if (errors.hasErrors()) {
@@ -46,16 +50,19 @@ public class FriendController {
         return ApiResponse.of(SuccessStatus._FRIEND_GET_SUCCESS, friendService.changeFriendRate(updateFriendRequestDTO));
     }
 
+    @CrossOrigin
     @GetMapping("/{friend_id}/changes")
     public ApiResponse getChangeFriendList(@PathVariable("friend_id") Long friendId) {
         return ApiResponse.of(SuccessStatus._FRIEND_AMEND_SUCCESS, friendService.getChanges(friendId));
     }
 
+    @CrossOrigin
     @GetMapping("/birthdays")
     public ApiResponse getBirthdayFriendList() {
         return ApiResponse.onSuccess(friendService.getBirthdayFriends());
     }
 
+    @CrossOrigin
     @GetMapping("/events")
     public ApiResponse getEventFriendList() {
         return ApiResponse.onSuccess(friendService.getEventFriends());

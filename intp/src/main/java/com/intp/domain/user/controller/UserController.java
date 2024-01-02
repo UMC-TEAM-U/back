@@ -27,6 +27,7 @@ public class UserController {
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService usersService;
 
+    @CrossOrigin
     @PostMapping("/sign-up")
     public ApiResponse signUp(@Valid @RequestBody  UserSignUpRequestDto userSignUpRequestDto,
                               Errors errors) {
