@@ -26,13 +26,7 @@ public enum ErrorStatus implements BaseErrorCode {
 
     MEMBER_SIGNUP_ERROR(HttpStatus.BAD_REQUEST, "SIGNUP4001", "회원가입 유효성 검사 실패"),
     EMAIL_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "SIGNUP4002", "이미 존재하는 이메일입니다."),
-    NEIGHBORHOOD_NOT_EXIST(HttpStatus.BAD_REQUEST, "SIGNUP4003", "동네가 존재하지 않습니다."),
-
-    //가계부 관련 에러
-    ACCOUNT_BOOK_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "ACCOUNT_BOOK4001", "이미 가계부가 존재합니다."),
-    ACCOUNT_BOOK_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "ACCOUNT_BOOK4002", "가계부 생성 유효성 검사 실패"),
-    ACCOUNT_BOOK_NOT_EXIST(HttpStatus.NOT_FOUND, "ACCOUNT_BOOK4003", "가계부가 존재하지 않습니다."),
-    ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
+    FRIEND_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "Friend4001", "친구 생성 유효성 검사 실패")
 
     //거래 관련 에러
 
