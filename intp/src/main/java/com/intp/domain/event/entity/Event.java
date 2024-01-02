@@ -1,6 +1,7 @@
 package com.intp.domain.event.entity;
 
 import com.intp.domain.friend.entity.Friend;
+import com.intp.domain.user.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,4 +30,7 @@ public class Event {
     @JoinColumn(name="friend_id", nullable = false)
     private Friend friend;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 }

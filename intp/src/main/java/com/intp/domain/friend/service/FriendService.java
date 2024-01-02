@@ -63,8 +63,8 @@ public class FriendService {
         ChangeHistory changeHistory
                 = ChangeHistory
                 .builder()
-                .before(friend.getFriendLevel().getLevel())
-                .after(updateFriendRequestDTO.getLevel())
+                .before_change(friend.getFriendLevel().getLevel())
+                .after_change(updateFriendRequestDTO.getLevel())
                 .reason(updateFriendRequestDTO.getReason())
                 .friend(friend)
                 .build();

@@ -31,4 +31,7 @@ public class Birthday {
     @JoinColumn(name = "friend_id")
     private Friend friend;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 }

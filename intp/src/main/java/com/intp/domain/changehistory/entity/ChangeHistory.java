@@ -21,8 +21,8 @@ public class ChangeHistory {
 
     private String reason;
 
-    private Integer before;
-    private Integer after;
+    private Integer before_change;
+    private Integer after_change;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "friend_id")

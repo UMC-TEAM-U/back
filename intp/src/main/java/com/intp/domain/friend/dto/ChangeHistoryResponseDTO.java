@@ -18,8 +18,8 @@ public class ChangeHistoryResponseDTO {
         return ChangeHistoryResponseDTO.builder()
                 .updatedAt(changeHistory.getFriend().getModifiedAt())
                 .reason(changeHistory.getReason())
-                .before(changeHistory.getBefore())
-                .after(changeHistory.getAfter())
+                .before(changeHistory.getBefore_change())
+                .after(changeHistory.getAfter_change())
                 .build();
     }
 }
