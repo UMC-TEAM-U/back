@@ -51,7 +51,7 @@ public class BirthdayService {
     private Member getMemberFromToken() {
         String userEmail = SecurityUtil.getCurrentUserEmail();
         Member member = memberRepository.findByEmail(userEmail)
-                .orElseThrow(() -> new UserHandler(ErrorStatus._UNAUTHORIZED));
+                  .orElseThrow(() -> new UserHandler(ErrorStatus._UNAUTHORIZED));
         return member;
     }
 }
