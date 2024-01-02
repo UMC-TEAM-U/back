@@ -1,9 +1,9 @@
 package com.intp.domain.friend.entity;
 
 public enum FriendLevel {
-    SNOW_CRYSTAL(0, "눈결정"),
-    SNOWFLAKE(1,"눈송이"),
-    SNOWMAN(2,"눈사람");
+    SNOW_CRYSTAL(1, "눈결정"),
+    SNOWFLAKE(2,"눈송이"),
+    SNOWMAN(3,"눈사람");
 
     private final int level;
     private final String name;

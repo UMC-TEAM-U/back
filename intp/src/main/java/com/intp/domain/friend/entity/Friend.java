@@ -28,7 +28,7 @@ public class Friend extends BaseTimeEntity {
     @Column(name = "friend_id")
     private Long id;
 
-    private String nickname;
+    private String name;
 
     private String memo;
 

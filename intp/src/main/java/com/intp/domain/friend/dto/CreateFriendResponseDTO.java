@@ -15,7 +15,7 @@ public class CreateFriendResponseDTO {
         return CreateFriendResponseDTO.builder()
                 .level(friend.getFriendLevel().name())
                 .memo(friend.getMemo())
-                .nickname(friend.getNickname())
+                .nickname(friend.getName())
                 .build();
     }
 }
