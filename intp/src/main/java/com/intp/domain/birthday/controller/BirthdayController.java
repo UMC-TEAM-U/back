@@ -33,9 +33,10 @@ public class BirthdayController {
 
     }
 
-    @GetMapping("/")
-    public List<BirthdayResponseDTO> getBirthday() {
-        return birthdayService.getBirthdays();
+    @GetMapping("/{friendId}")
+    public List<BirthdayResponseDTO> getBirthday(@PathVariable(value = "friendId") Long friendId) {
+
+        return birthdayService.getBirthdays(friendId);
     }
 
 }

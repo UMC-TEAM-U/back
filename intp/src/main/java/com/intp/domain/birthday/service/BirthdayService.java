@@ -3,6 +3,7 @@ package com.intp.domain.birthday.service;
 
 
 import com.intp.common.exception.handler.FriendHandler;
+import com.intp.common.exception.handler.ScheduleHandler;
 import com.intp.common.exception.handler.UserHandler;
 import com.intp.common.jwt.SecurityUtil;
 import com.intp.common.response.ApiResponse;
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,8 +39,9 @@ public class BirthdayService {
         return ApiResponse.of(SuccessStatus._PRESENT_ADD_SUCCESS, "선물 추가 성공!");
     }
 
-    public List<BirthdayResponseDTO> getBirthdays() {
-        List<Birthday> birthdays = birthdayRepository.findAllByMember(getMemberFromToken());
+    public List<BirthdayResponseDTO> getBirthdays( Long friendId ) {
+        List<Birthday> birthdays = birthdayRepository
+                .findAllByFriend(friendRepository.findById(friendId).orElseThrow(() -> new ScheduleHandler(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR)));
         return birthdays.stream()
                 .map(BirthdayResponseDTO::from)
                 .collect(Collectors.toList());
