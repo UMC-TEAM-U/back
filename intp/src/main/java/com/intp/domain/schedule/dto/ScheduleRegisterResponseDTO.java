@@ -27,6 +27,7 @@ public class ScheduleRegisterResponseDTO {
                     .date(schedule.getDate())
                     .memo(schedule.getMemo())
                     .title(schedule.getTitle())
+                    .friendId(schedule.getFriend().getId())
                     .build();
         }
 
