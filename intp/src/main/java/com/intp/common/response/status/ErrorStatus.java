@@ -27,7 +27,7 @@ public enum ErrorStatus implements BaseErrorCode {
     MEMBER_SIGNUP_ERROR(HttpStatus.BAD_REQUEST, "SIGNUP4001", "회원가입 유효성 검사 실패"),
     EMAIL_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "SIGNUP4002", "이미 존재하는 이메일입니다."),
     FRIEND_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "Friend4001", "친구 생성 유효성 검사 실패"),
-
+    PRESENT_ERROR(HttpStatus.BAD_REQUEST, "Present4001", "선물 추가 실패"),
     // 일정 관련 에러
     SCHEDULE_POST_ARGUMENT_ERROR(HttpStatus.BAD_REQUEST, "SCHEDULE_POST_4001", "일정 작성 오류, 존재하지 않는 친구입니다.")
 
