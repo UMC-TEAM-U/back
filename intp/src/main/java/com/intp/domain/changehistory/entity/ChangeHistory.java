@@ -2,16 +2,16 @@ package com.intp.domain.changehistory.entity;
 
 import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.user.entity.Member;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "change_history")
 public class ChangeHistory {
     @Id
@@ -21,6 +21,8 @@ public class ChangeHistory {
 
     private String reason;
 
+    private Integer before;
+    private Integer after;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "friend_id")
