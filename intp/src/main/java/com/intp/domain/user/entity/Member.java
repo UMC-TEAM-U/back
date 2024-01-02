@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 import javax.persistence.*;
 
 import com.intp.common.entity.BaseTimeEntity;
+import com.intp.domain.birthday.entity.Birthday;
+import com.intp.domain.changehistory.entity.ChangeHistory;
+import com.intp.domain.event.entity.Event;
 import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.schedule.entity.Schedule;
 import lombok.AllArgsConstructor;
@@ -49,11 +52,20 @@ public class Member extends BaseTimeEntity implements UserDetails {
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<String> roles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Schedule", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Friend> friendList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Schedule> memberScheduleList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Friend", cascade = CascadeType.ALL)
-    private List<Friend> friendList = new ArrayList<>();
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<ChangeHistory> changeHistoryList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Birthday> birthdayList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Event> eventList = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
