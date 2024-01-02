@@ -2,6 +2,7 @@ package com.intp.domain.friend.controller;
 
 import com.intp.common.response.ApiResponse;
 import com.intp.common.response.status.ErrorStatus;
+import com.intp.common.response.status.SuccessStatus;
 import com.intp.domain.friend.dto.CreateFriendRequestDTO;
 import com.intp.domain.friend.service.FriendService;
 import lombok.Getter;
@@ -33,8 +34,7 @@ public class FriendController {
     }
 
     @GetMapping("/{friend_id}")
-    public ApiResponse getFriend(@PathVariable("friend_id") int friendId) {
-        //return ApiResponse.of(SuccessStatus., friendService.get(post_id));
-        return null;
+    public ApiResponse getFriend(@PathVariable("friend_id") Long friendId) {
+        return ApiResponse.of(SuccessStatus._FRIEND_GET_SUCCESS, friendService.getFriend(friendId));
     }
 }
