@@ -24,14 +24,13 @@ public class Birthday {
     @JoinColumn(name="user_id")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="friend_id")
-    private Friend friend;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name="friend_id")
+//    private Friend friend;
 
     private int price; // user가 받은 선물의 가격
 
     private String memo;
-
 
 
 
