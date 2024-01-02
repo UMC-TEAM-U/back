@@ -23,6 +23,7 @@ public class BirthdayController {
 
     private final BirthdayService birthdayService;
 
+    @CrossOrigin
     @PostMapping("")
     public ApiResponse createFriend(@Valid @RequestBody CreateBirthdayRequestDTO birthdayDTO,
                                     Errors errors) {
@@ -33,6 +34,7 @@ public class BirthdayController {
 
     }
 
+    @CrossOrigin
     @GetMapping("/{friendId}")
     public List<BirthdayResponseDTO> getBirthday(@PathVariable(value = "friendId") Long friendId) {
         return birthdayService.getBirthdays(friendId);

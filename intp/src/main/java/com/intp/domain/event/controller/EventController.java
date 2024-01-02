@@ -22,6 +22,7 @@ import static com.intp.common.util.ValidationUtils.getValidationErrors;
 public class EventController {
     private final EventService eventService;
 
+    @CrossOrigin
     @PostMapping("")
     public ApiResponse createEvent(@Valid @RequestBody CreateEventRequestDTO createEventRequestDTO, Errors errors){
         if (errors.hasErrors()) {
@@ -30,6 +31,7 @@ public class EventController {
         CreateEventResponseDTO createdEvent = eventService.createEvent(createEventRequestDTO);
         return ApiResponse.onSuccess(createdEvent);
     }
+    @CrossOrigin
     @GetMapping("/{friendId}")
     public ApiResponse getEvents(@PathVariable(value = "friendId") Long friendId){
         return ApiResponse.onSuccess(eventService.getEvents(friendId));
