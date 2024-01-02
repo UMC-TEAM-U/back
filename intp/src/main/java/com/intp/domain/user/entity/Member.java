@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.persistence.*;
 
 import com.intp.common.entity.BaseTimeEntity;
+import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.schedule.entity.Schedule;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,9 +49,11 @@ public class Member extends BaseTimeEntity implements UserDetails {
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<String> roles = new ArrayList<>();
 
-    // 멤버 - 일정 연관관계 추가
     @OneToMany(mappedBy = "Schedule", cascade = CascadeType.ALL)
     private List<Schedule> memberScheduleList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "Friend", cascade = CascadeType.ALL)
+    private List<Friend> friendList = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
