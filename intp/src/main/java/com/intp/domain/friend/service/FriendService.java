@@ -42,6 +42,9 @@ public class FriendService {
                 .map(FriendResponseDTO::from)
                 .collect(Collectors.toList());
     }
+    public FriendResponseDTO getFriend(Long friendId){
+        return null;
+    }
 
     private Member getMemberFromToken() {
         String userEmail = SecurityUtil.getCurrentUserEmail();

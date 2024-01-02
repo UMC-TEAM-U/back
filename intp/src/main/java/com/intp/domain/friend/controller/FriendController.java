@@ -31,4 +31,10 @@ public class FriendController {
     public ApiResponse getFriends(@RequestParam int sort){
         return ApiResponse.onSuccess(friendService.getFriends(sort));
     }
+
+    @GetMapping("/{friend_id}")
+    public ApiResponse getFriend(@PathVariable("friend_id") int friendId) {
+        //return ApiResponse.of(SuccessStatus., friendService.get(post_id));
+        return null;
+    }
 }
