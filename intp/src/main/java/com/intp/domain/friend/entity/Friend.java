@@ -6,17 +6,20 @@ import com.intp.domain.changehistory.entity.ChangeHistory;
 import com.intp.domain.event.entity.Event;
 import com.intp.domain.schedule.entity.Schedule;
 import com.intp.domain.user.entity.Member;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static lombok.AccessLevel.PRIVATE;
+import static lombok.AccessLevel.PROTECTED;
+
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = PROTECTED)
+@AllArgsConstructor(access = PRIVATE)
+@Builder
 @Entity
 @Table(name = "friend")
 public class Friend extends BaseTimeEntity {
