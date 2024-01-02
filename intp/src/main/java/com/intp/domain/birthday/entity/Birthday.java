@@ -24,13 +24,8 @@ public class Birthday {
     private int price;
 
     private String memo;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
-    private Member member;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="friend_id")
+    @JoinColumn(name = "friend_id")
     private Friend friend;
 
 }
