@@ -7,10 +7,7 @@ import com.intp.domain.birthday.dto.CreateBirthdayRequestDTO;
 import com.intp.domain.birthday.service.BirthdayService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -32,4 +29,10 @@ public class BirthdayController {
         return birthdayService.createBirthday(birthdayDTO);
 
     }
+
+    @GetMapping("/")
+    public List<BirthdayResponseDTO> getBirthday() {
+        return birthdayService.getBirthdays();
+    }
+
 }
