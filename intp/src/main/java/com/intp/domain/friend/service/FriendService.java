@@ -1,5 +1,6 @@
 package com.intp.domain.friend.service;
 
+import com.intp.common.exception.handler.ScheduleHandler;
 import com.intp.common.exception.handler.UserHandler;
 import com.intp.common.jwt.SecurityUtil;
 import com.intp.common.response.status.ErrorStatus;
@@ -43,7 +44,8 @@ public class FriendService {
                 .collect(Collectors.toList());
     }
     public FriendResponseDTO getFriend(Long friendId){
-        return null;
+        Friend friend = friendRepository.findById(friendId).orElseThrow(() -> new ScheduleHandler(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR));
+        return FriendResponseDTO.from(friend);
     }
     public List<FriendResponseDTO> getFriends(){
         Member member = getMemberFromToken();

@@ -17,6 +17,7 @@ public enum SuccessStatus implements BaseCode {
     _SIGNUP_SUCCESS(HttpStatus.OK, "SIGNUP200", "회원가입 성공입니다."),
     _LOGIN_SUCCESS(HttpStatus.OK, "LOGIN200", "로그인 성공입니다."),
     _PRESENT_ADD_SUCCESS(HttpStatus.OK, "SIGNUP200", "선물추가 성공입니다."),
+    _FRIEND_GET_SUCCESS(HttpStatus.OK, "FRIEND200", "친구 상세 조회 성공입니다.")
     ;
 
 
