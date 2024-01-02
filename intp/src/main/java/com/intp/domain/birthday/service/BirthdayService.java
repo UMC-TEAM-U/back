@@ -24,7 +24,7 @@ public class BirthdayService {
     private final FriendRepository friendRepository;
     private final MemberRepository memberRepository;
 
-    public ApiResponse save(BirthdayDTO birthdayDTO){
+    public ApiResponse add(BirthdayDTO birthdayDTO){
 
         Friend friend = friendRepository.getReferenceById(birthdayDTO.getFriend_id());
         Birthday birthday = birthdayDTO.toEntity(birthdayDTO,friend);

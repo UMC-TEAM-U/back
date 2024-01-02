@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdd86f65-8182-44b8-a720-88847c0c4b62" name="Changes" comment="[feature] : crud 만드는 중 #13">
-      <change afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/controller/BirthdayController.java" afterDir="false" />
+    <list default="true" id="fdd86f65-8182-44b8-a720-88847c0c4b62" name="Changes" comment="[feature] : crud 만들었음 #13">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/common/response/status/ErrorStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/common/response/status/ErrorStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/common/response/status/SuccessStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/common/response/status/SuccessStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/dto/BirthdayDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/dto/BirthdayDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/entity/Birthday.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/entity/Birthday.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/controller/BirthdayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/controller/BirthdayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/service/BirthdayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/service/BirthdayService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704198072755</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[feature] : crud 만들었음 #13">
+      <option name="closed" value="true" />
+      <created>1704204594904</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704204594904</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,6 +139,7 @@
     <MESSAGE value="[fix] : 윈도우에서 생성되는 파일 gitignore 적용#5" />
     <MESSAGE value="[feature] : BirthdayRepository 생성 #5" />
     <MESSAGE value="[feature] : crud 만드는 중 #13" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] : crud 만드는 중 #13" />
+    <MESSAGE value="[feature] : crud 만들었음 #13" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] : crud 만들었음 #13" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -18,17 +19,18 @@ import static com.intp.common.util.ValidationUtils.getValidationErrors;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/birthdays")
 public class BirthdayController {
 
     private final BirthdayService birthdayService;
 
-    @PostMapping("/birthday/addpresent")
+    @PostMapping("/")
     public ApiResponse createFriend(@Valid @RequestBody BirthdayDTO birthdayDTO,
                                     Errors errors) {
         if (errors.hasErrors()) {
             return ApiResponse.ofFailure(ErrorStatus.PRESENT_ERROR, getValidationErrors(errors));
         }
-        return birthdayService.save(birthdayDTO);
+        return birthdayService.add(birthdayDTO);
 
     }
 }
