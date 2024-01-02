@@ -6,6 +6,8 @@ import com.intp.domain.user.dto.UserLoginRequestDTO;
 import com.intp.domain.user.dto.UserSignUpRequestDto;
 import com.intp.domain.user.service.UserService;
 import com.intp.common.response.ApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.Errors;
@@ -28,6 +30,7 @@ public class UserController {
     private final UserService usersService;
 
     @CrossOrigin
+    @Operation(summary = "회원가입 API")
     @PostMapping("/sign-up")
     public ApiResponse signUp(@Valid @RequestBody  UserSignUpRequestDto userSignUpRequestDto,
                               Errors errors) {
@@ -38,6 +41,7 @@ public class UserController {
     }
 
     @CrossOrigin
+    @Operation(summary = "로그인 API")
     @PostMapping("/login")
     public ApiResponse login(@Validated @RequestBody UserLoginRequestDTO userLoginRequestDTO,
                              Errors errors) {

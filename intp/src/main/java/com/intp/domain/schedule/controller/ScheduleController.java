@@ -5,6 +5,7 @@ import com.intp.common.response.status.ErrorStatus;
 import com.intp.domain.schedule.dto.ScheduleRegisterRequestDTO;
 import com.intp.domain.schedule.service.ScheduleCommandService;
 import com.intp.domain.schedule.service.ScheduleQueryService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,8 @@ public class ScheduleController {
 
     // 일정 추가하기
     @CrossOrigin
-    @PostMapping("/")
+    @Operation(summary = "일정 생성 API")
+    @PostMapping("")
     public ApiResponse createSchedule(@RequestBody @Valid ScheduleRegisterRequestDTO scheduleRegisterRequestDTO, Errors errors) {
         if (errors.hasErrors()) {
             return ApiResponse.ofFailure(ErrorStatus.SCHEDULE_POST_ARGUMENT_ERROR, getValidationErrors(errors));
@@ -33,7 +35,8 @@ public class ScheduleController {
     }
 
     @CrossOrigin
-    @GetMapping("/")
+    @Operation(summary = "월별 일정 조회 API")
+    @GetMapping("")
     public ApiResponse getMonthlySchedules(@RequestParam Integer year,
                                            @RequestParam Integer month) {
 
@@ -41,7 +44,8 @@ public class ScheduleController {
     }
 
     @CrossOrigin
-    @GetMapping("/datail")
+    @Operation(summary = "일별 일정 조회 API")
+    @GetMapping("/detail")
     public ApiResponse getDateSchedules(@RequestParam Integer year,
                                           @RequestParam Integer month,
                                           @RequestParam Integer date
@@ -52,7 +56,7 @@ public class ScheduleController {
 
     @CrossOrigin
     @DeleteMapping("/{schedule_id}")
-
+    @Operation(summary = "일정 삭제 API")
     public ApiResponse getDateSchedules(@PathVariable Long schedule_id
     ) {
         return ApiResponse.onSuccess(scheduleQueryService.deleteSchedule(schedule_id));
