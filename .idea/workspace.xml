@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdd86f65-8182-44b8-a720-88847c0c4b62" name="Changes" comment="[feature] : crud 만들었음 #13">
+    <list default="true" id="fdd86f65-8182-44b8-a720-88847c0c4b62" name="Changes" comment="[feature] : uri 통일하여 수정 #13">
+      <change afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/dto/BirthdayResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/controller/BirthdayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/controller/BirthdayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/repository/BirthdayReopository.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/repository/BirthdayReopository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/service/BirthdayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/intp/src/main/java/com/intp/domain/birthday/service/BirthdayService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704204594904</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[feature] : uri 통일하여 수정 #13">
+      <option name="closed" value="true" />
+      <created>1704206306538</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704206306538</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,6 +150,7 @@
     <MESSAGE value="[feature] : BirthdayRepository 생성 #5" />
     <MESSAGE value="[feature] : crud 만드는 중 #13" />
     <MESSAGE value="[feature] : crud 만들었음 #13" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] : crud 만들었음 #13" />
+    <MESSAGE value="[feature] : uri 통일하여 수정 #13" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] : uri 통일하여 수정 #13" />
   </component>
 </project>
