@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.persistence.*;
+
+import com.intp.domain.schedule.entity.Schedule;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -44,6 +46,10 @@ public class Member implements UserDetails {
     @Builder.Default
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<String> roles = new ArrayList<>();
+
+    // 멤버 - 일정 연관관계 추가
+    @OneToMany(mappedBy = "Schedule", cascade = CascadeType.ALL)
+    private List<Schedule> memberScheduleList = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
