@@ -47,4 +47,11 @@ public class ScheduleController {
         return ApiResponse.onSuccess(scheduleQueryService.getDateSchedules(year, month, date));
     }
 
+    @DeleteMapping("/delete/{schedule_id}")
+    public ApiResponse getDateSchedules(@PathVariable Long schedule_id
+    ) {
+
+        return ApiResponse.onSuccess(scheduleQueryService.deleteSchedule(schedule_id));
+    }
+
 }
