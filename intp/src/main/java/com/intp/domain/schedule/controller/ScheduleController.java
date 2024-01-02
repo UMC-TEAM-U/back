@@ -52,6 +52,7 @@ public class ScheduleController {
 
     @CrossOrigin
     @DeleteMapping("/{schedule_id}")
+
     public ApiResponse getDateSchedules(@PathVariable Long schedule_id
     ) {
         return ApiResponse.onSuccess(scheduleQueryService.deleteSchedule(schedule_id));
