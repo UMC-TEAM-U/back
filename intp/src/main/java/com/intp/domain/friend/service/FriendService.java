@@ -4,8 +4,12 @@ import com.intp.common.exception.handler.ScheduleHandler;
 import com.intp.common.exception.handler.UserHandler;
 import com.intp.common.jwt.SecurityUtil;
 import com.intp.common.response.status.ErrorStatus;
+import com.intp.domain.birthday.entity.Birthday;
+import com.intp.domain.birthday.repository.BirthdayRepository;
 import com.intp.domain.changehistory.entity.ChangeHistory;
 import com.intp.domain.changehistory.repository.ChangeHistoryRepository;
+import com.intp.domain.event.entity.Event;
+import com.intp.domain.event.repository.EventRepository;
 import com.intp.domain.friend.dto.*;
 import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.friend.entity.FriendLevel;
@@ -22,6 +26,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class FriendService {
     private final MemberRepository memberRepository;
+    private final EventRepository eventRepository;
+    private final BirthdayRepository birthdayRepository;
     private final FriendRepository friendRepository;
     private final ChangeHistoryRepository changeHistoryRepository;
 
@@ -71,6 +77,28 @@ public class FriendService {
         friend.setFriendLevel(FriendLevel.fromLevel(updateFriendRequestDTO.getLevel()));
         changeHistoryRepository.save(changeHistory);
         return FriendResponseDTO.from(friend);
+    }
+
+    public List<FriendResponseDTO> getBirthdayFriends(){
+        List<Birthday> birthdayList = birthdayRepository.findAllByMember(getMemberFromToken());
+        List<Friend> friendList = birthdayList.stream()
+                .map(Birthday::getFriend)
+                .distinct() // optional, removes duplicates
+                .collect(Collectors.toList());
+        return friendList.stream()
+                .map(FriendResponseDTO::from)
+                .collect(Collectors.toList());
+    }
+
+    public List<FriendResponseDTO> getEventFriends(){
+        List<Event> eventList = eventRepository.findAllByMember(getMemberFromToken());
+        List<Friend> friendList = eventList.stream()
+                .map(Event::getFriend)
+                .distinct() // optional, removes duplicates
+                .collect(Collectors.toList());
+        return friendList.stream()
+                .map(FriendResponseDTO::from)
+                .collect(Collectors.toList());
     }
 
 

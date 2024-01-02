@@ -47,4 +47,14 @@ public class FriendController {
     public ApiResponse getChangeFriendList(@PathVariable("friend_id") Long friendId) {
         return ApiResponse.of(SuccessStatus._FRIEND_AMEND_SUCCESS, friendService.getChanges(friendId));
     }
+
+    @GetMapping("/birthdays")
+    public ApiResponse getBirthdayFriendList() {
+        return ApiResponse.onSuccess(friendService.getBirthdayFriends());
+    }
+
+    @GetMapping("/events")
+    public ApiResponse getEventFriendList() {
+        return ApiResponse.onSuccess(friendService.getEventFriends());
+    }
 }

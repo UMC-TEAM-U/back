@@ -12,7 +12,9 @@ import java.util.Optional;
 @Repository
 public interface BirthdayRepository extends JpaRepository<Birthday,Long> {
 
-    Optional<Birthday> findByfriendId(Long id);
     List<Birthday> findAllByFriend(Friend friend);
+
+    List<Birthday> findAllByMember(Member member);
+
 
 }
