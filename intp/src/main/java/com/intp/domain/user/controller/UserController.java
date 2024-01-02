@@ -28,7 +28,7 @@ public class UserController {
     private final UserService usersService;
 
     @PostMapping("/sign-up")
-    public ApiResponse signUp(@Valid @RequestBody UserSignUpRequestDto userSignUpRequestDto,
+    public ApiResponse signUp(@Valid @RequestBody  UserSignUpRequestDto userSignUpRequestDto,
                               Errors errors) {
         if (errors.hasErrors()) {
             return ApiResponse.ofFailure(ErrorStatus.MEMBER_SIGNUP_ERROR, getValidationErrorList(errors));
