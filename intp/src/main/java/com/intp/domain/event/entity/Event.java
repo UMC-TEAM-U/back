@@ -2,9 +2,7 @@ package com.intp.domain.event.entity;
 
 import com.intp.domain.friend.entity.Friend;
 import com.intp.domain.user.entity.Member;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,6 +11,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
+@Builder
 public class Event {
 
     @Id
@@ -21,7 +21,7 @@ public class Event {
     private LocalDateTime event_id;
 
     @Column(nullable = false)
-    private String event_content;
+    private String event_name;
 
     @Column(nullable = false)
     private int price;
@@ -30,7 +30,4 @@ public class Event {
     @JoinColumn(name="friend_id", nullable = false)
     private Friend friend;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
 }
