@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class ChangeHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "friend_id")
+    @Column(name = "change_history_id")
     private Long id;
 
     private String reason;
